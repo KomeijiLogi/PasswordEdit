@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+
+</head>
+
+<body>
+    @Styles.Render("~/Content/muicss")
+    @Styles.Render("~/Content/blur")
+    <div class="mui-content">
+     
+        <form action="/Home/Index" method="post">
+            <input name="userName" type="hidden" value="@ViewData["userName"]" />
+            <h5 style="margin-left:10px">请输入旧密码：</h5>
+            <div class="mui-input-row mui-password" style="margin-right:20px;margin-left:10px;">
+                <input id="oldPw" type="password" class="mui-input-password" name="oldPw" />
+
+            </div>
+
+            <h5 style="margin-left:10px">请输入新密码：</h5>
+            <div class="mui-input-row mui-password" style="margin-right:20px;margin-left:10px;">
+                <input id="newPw" type="password" class="mui-input-password" name="newPw" />
+            </div>
+            <h5 style="margin-left:10px">请再次输入新密码：</h5>
+            <div class="mui-input-row mui-password " style="margin-right:20px;margin-left:10px;">
+                <input id="newPw_twice" type="password" class="mui-input-password" name="newPw_twice" />
+            </div>
+            <div class="mui-button-row">
+                <button type="submit" class="mui-btn mui-btn-primary" id="confirmPw">确认</button>&nbsp;&nbsp;
+                <button type="reset" class="mui-btn mui-btn-danger">取消</button>
+            </div>
+            <br/>
+            <label id="pw_msg" style="margin:20px">
+                @ViewData["msg"]
+            </label>
+        </form>
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/mui")
+    @Scripts.Render("~/bundles/login")
+   
+</body>
+</html>
